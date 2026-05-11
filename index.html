@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+    </div>
+    <h1>Welcome to my clothing store</h1>
+    <div class="form-container">
+      <form onsubmit="addClothingItem(event), countItemsAndAverage()">
+            <div>
+                <select name="Clothing Item" id="item">
+                    <option value="shirt">Shirt</option>
+                    <option value="pants">Pants</option>
+                    <option value="dress">Dress</option>
+                    <option value="skirt">Skirt</option>
+                    <option value="hat">Hat</option>
+                </select>
+            </div> 
+            <div>
+                
+                <input type="text" required id="description" name="description" placeholder="Enter description for the clothing item">
+            </div>
+         <div class="color-picker">
+  <input type="color" id="color" value="#503359" title="Select Color" oninput="updateColorPreview(this.value)" >
+  <div id="colorPreview" ></div>
+</div>
+    
+            <div>
+                <input type="number" required id="price" name="price" placeholder="Price" min="1" max="1000">
+            </div>
+             <div>
+                <input type="number" required id="discount" name="discount" placeholder="Discount" min="0" max="100" oninput="showValue(this.value)">
+              
+            </div>
+            <div>
+                <input type="url" required id="picture" value="https://shop.mango.com/assets/rcs/pics/static/T5/fotos/S/57014406_BL_B.jpg" name="poster" placeholder="Poster URL">
+            </div>
+           <br>
+            <button type="submit">Submit</button>
+            <br>
+        </form>
+     
+    </div>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Clothing Item</th>
+                <th>Description</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Finale Price</th>
+                <th>Picture</th>
+                <th>Canceling</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div id="averagePrice"> </div>
+    <div id="totalPrice"></div>
+    <div id="totalItems"> </div>
+<br>
+<button onclick="saveClothingItems()">Save Clothing Items</button>
+<br>
+<br>
+<button onclick="loadClothingItems()">Load Clothing Items</button>
+<br>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html> 
